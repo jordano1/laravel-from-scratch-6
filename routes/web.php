@@ -28,8 +28,8 @@ Route::get('/clients',function(){
 Route::get('/careers',function(){
     return view('careers');
 });
-Route::get('/posts/{post}', 'PostsController@show');
+Route::get('/posts/{post}', 'PostsController@show ');
 Route::get('/articles', 'ArticlesController@index');
+Route::get('/articles/create', 'ArticlesController@create');
 Route::get('/articles/{article}', 'ArticlesController@show');
-Route::get('/articles/{article}', 'ArticlesController@update');
 
