@@ -31,3 +31,5 @@ Route::get('/careers',function(){
 Route::get('/posts/{post}', 'PostsController@show');
 Route::get('/articles', 'ArticlesController@index');
 Route::get('/articles/{article}', 'ArticlesController@show');
+Route::get('/articles/{article}', 'ArticlesController@update');
+
