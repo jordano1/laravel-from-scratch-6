@@ -19,10 +19,10 @@
 			@foreach ($articles as $article)
 
 				<li class="first">
-					<h3>Amet sed volutpat mauris</h3>
-					<p><a href="#">In posuere eleifend odio. Quisque semper augue mattis wisi. Pellentesque viverra vulputate enim. Aliquam erat volutpat.</a></p>
+					<h3>{{$article->title}}</h3>
+					<p><a href="/articles/{{$article->id}}">{{$article->excerpt}}</a></p>
 				</li>
-				@endforeach
+			@endforeach
 			</ul>
 			<div id="stwo-col">
 				<div class="sbox1">
