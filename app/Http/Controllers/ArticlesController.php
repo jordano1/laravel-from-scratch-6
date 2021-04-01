@@ -32,15 +32,35 @@ class ArticlesController extends Controller
     public function store()
     {
         // persists the new resource
+        request()->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
+        $article = new Article();
+        $article->title = request('title');
+        $article->body = request('body');
+        $article->excerpt = request('excerpt');
+        $article->save();
+
+        return redirect('/articles');
     }
 
-    public function edit()
+    public function edit($id)
     {
-        // edit an existing resource    
+        // edit an existing resource
+        $article = Article::find($id);
+        return view('articles.edit', compact('article'));
     }
 
-    public function update()
+    public function update($id)
     {
+        $article= Article::find($id);
+        $article->title = request('title');
+        $article->body = request('body');
+        $article->excerpt = request('excerpt');
+        $article->save();
+        return redirect('/articles/' . $article->id);
         // persist the edited resource
     }
 
