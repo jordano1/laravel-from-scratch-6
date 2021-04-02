@@ -38,6 +38,10 @@ class ArticlesController extends Controller
             'body' => 'required'
         ]);
         $article = new Article();
+        if($article->exists())
+        {
+            dd('this user already exists');
+        }
         $article->title = request('title');
         $article->body = request('body');
         $article->excerpt = request('excerpt');
@@ -55,6 +59,14 @@ class ArticlesController extends Controller
 
     public function update($id)
     {
+          // persists the new resource
+          request()->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
+
+        
         $article= Article::find($id);
         $article->title = request('title');
         $article->body = request('body');
@@ -66,7 +78,7 @@ class ArticlesController extends Controller
 
     public function destroy()
     {
-        // delete the resource
+        $article= Article::find($id);
     }
         
 }
