@@ -79,7 +79,7 @@ a:hover
 {
 	display: block;
 	width: 100%;
-	margin: 0 0 2em 0;
+	margin: 0 0 .5em 0;
 }
 
 .image-left
@@ -559,7 +559,7 @@ ul.contact li a.icon-rss:before
 
 	#content
 	{
-		float: left;
+		
 		width: 700px;
 	}
 

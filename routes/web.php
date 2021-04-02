@@ -30,6 +30,8 @@ Route::get('/careers',function(){
 });
 Route::get('/posts/{post}', 'PostsController@show ');
 Route::get('/articles', 'ArticlesController@index');
+Route::post('articles', 'ArticlesController@store');
 Route::get('/articles/create', 'ArticlesController@create');
+Route::put('/articles/{article}', 'ArticlesController@update');
 Route::get('/articles/{article}', 'ArticlesController@show');
-
+Route::get('/articles/{article}/edit', 'ArticlesController@edit');
