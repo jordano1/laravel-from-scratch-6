@@ -13,23 +13,21 @@
                 <div class="field">
                     <label for="title" class="label">Title</label>
                     <div class="control">
-                        <input type="text" class="input" name="title" >
-                        @if ($errors->has('title'))
-                        <input type="text" class="input is-danger" name="title" >
-                        <p class="help is-danger">{{$errors->first('title')}}</p>
-                        @endif
+                        
+                            <input type="text" class="{{$errors->has('title')}} ? input is-danger : input" name="title" >
+                       
                     </div>
                 </div>
                 <div class="field">
                     <label for="excerpt" class="label">Excerpt</label>
                     <div class="control">
-                        <textarea class="textarea" name="excerpt" id="excerpt" cols="30" rows="10" ></textarea>
+                        <textarea class="{{$errors->has('excerpt')}} ? textarea is-danger : textarea" name="excerpt" id="excerpt" cols="30" rows="10" ></textarea>
                     </div>
                 </div>
                 <div class="field">
                     <label for="body" class="label">body</label>
                     <div class="control">
-                        <textarea class="textarea" name="body" id="body" cols="30" rows="10" ></textarea>
+                        <textarea class="{{$errors->has('body')}} ? textarea is-danger : textarea" name="body" id="body" cols="30" rows="10" ></textarea>
                     </div>
                 </div>
                 <div class="field is-grouped">
