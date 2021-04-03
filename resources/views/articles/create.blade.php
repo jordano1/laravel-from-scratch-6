@@ -17,24 +17,29 @@
                         @if ($errors->has('title'))
                         <p class="help is-danger">{{$errors->first('title')}}</p>
                         @endif
+
                     </div>
                 </div>
                 <div class="field">
                     <label for="excerpt" class="label">Excerpt</label>
                     <div class="control">
+
                         <textarea class="textarea @error('excerpt') is-danger @enderror'}}" name="excerpt" id="excerpt" cols="30" rows="10" >{{old('excerpt')}}</textarea>
                         @if ($errors->has('title')) 
                         <p class="help is-danger">{{$errors->first('excerpt')}}</p>
                         @endif
+
                     </div>
                 </div>
                 <div class="field">
                     <label for="body" class="label">body</label>
                     <div class="control">
+
                         <textarea class="textarea @error('body') is-danger @enderror'}}" name="body" id="body" cols="30" rows="10" >{{old('body')}}</textarea>
                         @if ($errors->has('title'))
                         <p class="help is-danger">{{$errors->first('body')}}</p>
                         @endif
+
                     </div>
                 </div>
                 <div class="field is-grouped">

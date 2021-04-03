@@ -34,8 +34,8 @@ class ArticlesController extends Controller
         // persists the new resource
         request()->validate([
             'title' => 'required',
-            'excerpt' => 'required',
-            'body' => 'required'
+            'body' => 'required',
+            'excerpt' => 'required'
         ]);
         $article = new Article();
         if($article->exists())
