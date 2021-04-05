@@ -9,6 +9,7 @@
                 <h1 style="font-size:50px;">
                     <a href="/articles/{{$article->id}}">
                         {{$article->title}}
+                        {{$article->id}}
                     </a>
                 </h1>
             </div>
