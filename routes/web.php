@@ -29,10 +29,10 @@ Route::get('/careers',function(){
     return view('careers');
 });
 Route::get('/posts/{post}', 'PostsController@show ');
-Route::get('/articles', 'ArticlesController@index');
+Route::get('/articles', 'ArticlesController@index')->name('articles.index');
 Route::post('articles', 'ArticlesController@destroy');
 Route::post('articles', 'ArticlesController@store');
 Route::get('/articles/create', 'ArticlesController@create');
-Route::put('/articles/{article}', 'ArticlesController@update');
-Route::get('/articles/{article}', 'ArticlesController@show');
+Route::put('/articles/{article}', 'ArticlesController@update')->name('articles.update');
+Route::get('/articles/{article}', 'ArticlesController@show')->name('articles.show');
 Route::get('/articles/{article}/edit', 'ArticlesController@edit');

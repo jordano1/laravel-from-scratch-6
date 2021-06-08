@@ -7,7 +7,7 @@
 		<div id="content" style="padding-bottom:30px; text-align:center; margin:0 auto;">
             <div class="title">
                 <h1 style="font-size:50px;">
-                    <a href="/articles/{{$article->id}}">
+                    <a href="{{$article->path()}}">
                         {{$article->title}}
                         {{$article->id}}
                     </a>

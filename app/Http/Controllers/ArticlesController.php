@@ -44,7 +44,7 @@ class ArticlesController extends Controller
     {
         // persists the new resource
         $article->update($this->validateArticle());
-        return redirect('/articles/' . $article->id);
+        return redirect($article->path());
     }
 
     public function destroy($id)
