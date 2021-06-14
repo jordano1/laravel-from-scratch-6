@@ -11,10 +11,11 @@
 |
 */
 Route::get('/',function(){
-    return view('welcome');
+    return view('welcome',[
+        'articles' => $article=App\Article::latest()->get()
+    ]);
 });
 Route::get('/about',function(){
-    
     return view('about',[
         'articles' => $article=App\Article::latest()->get()
     ]);
@@ -28,7 +29,12 @@ Route::get('/clients',function(){
 Route::get('/careers',function(){
     return view('careers');
 });
-Route::get('/posts/{post}', 'PostsController@show ');
+
+Route::get('/articles', function(){
+    return view('articles.index', [
+        'articles' =>App\Article::latest()->get()
+    ]);
+});
 Route::get('/articles', 'ArticlesController@index')->name('articles.index');
 Route::post('articles', 'ArticlesController@destroy');
 Route::post('articles', 'ArticlesController@store');

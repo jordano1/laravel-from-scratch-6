@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
@@ -11,7 +12,15 @@ class ArticlesController extends Controller
     public function index()
     {
         // render a list of a resource
-        $articles = Article::latest()->get();
+        if(request('tag'))
+        {
+            $articles = Tag::where('name', request('tag'))->firstOrFail()->articles;
+            
+        }else{
+            $articles = Article::latest()->get();
+        }
+
+        
         return view('articles.index', ['articles' => $articles]);
     }
 
@@ -24,12 +33,14 @@ class ArticlesController extends Controller
     
     public function create()
     {
-        // shows a view to create a new resource
-        return view('articles.create');
+        return view('articles.create', [
+            'tags'=>Tag::all()
+        ]);
     }
 
     public function store(Article $article)
     {
+        dd(request()->all());
         // persists the new resource
         $article->create($this->validateArticle());
         return redirect('/articles');
