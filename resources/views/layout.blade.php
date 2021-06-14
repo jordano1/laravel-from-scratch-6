@@ -21,7 +21,6 @@ Released   : 20140225
 <link href="/css/fonts.css" rel="stylesheet" media="all" />
 @yield('bulma')
 
-
 </head>
 <body>
 <div id="header-wrapper">

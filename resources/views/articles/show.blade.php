@@ -11,9 +11,9 @@
 			<p><img src="/css/images/banner.jpg" alt="" class="image image-full" /> </p>
 			<p>{{$article->excerpt}}</p>
 			{!! $article->body !!}
-			<p>
-				@foreach ($article->Tags as $tag)
-					<a href="#">{{$tag->name}}</a>		
+			<p style="margin-top:10px;">
+				@foreach ($article->tags as $tag)
+					<a href="{{ route('articles.index', ['tag' => $tag->name]) }}">{{$tag->name}}</a>
 				@endforeach
 			</p>
 		</div>
