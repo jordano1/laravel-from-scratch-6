@@ -49,7 +49,7 @@ class ArticlesController extends Controller
 
     public function destroy($id)
     {
-        $article= Article::find($id);
+        $article = Article::find($id);
     }
         
     public function validateArticle()

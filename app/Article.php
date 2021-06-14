@@ -12,10 +12,15 @@ class Article extends Model
     {
         return route('articles.show', $this);
     }
-
-    public function user()
+    public function author()
     {
         # user who wrote it
-        return $this->belongsTo(User::class); // select * from user where project_id = 1
+        return $this->belongsTo(User::class, 'user_id'); // select * from user where project_id = 1
     }
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+     
 }
+

@@ -43,7 +43,7 @@ class User extends Authenticatable
     }
         public function projects()
     {
-        return $this->hasMan(Project::class); // select * from projects where user_id = 1
+        return $this->hasMany(Project::class); // select * from projects where user_id = 1
         # user can have many projects
     }
 }
